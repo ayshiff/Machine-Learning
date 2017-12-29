@@ -1,4 +1,3 @@
-
 // Initialize the libraries
 const ml = require('ml-regression');
 const csv = require('csvtojson');
@@ -38,8 +37,9 @@ csv()
 function dressData(){
 
     csvData.forEach((row) => {
-        X.push(f(row.Radio));
-        y.push(f(row.Sales));
+        // Bug fixed => Radio replaced by radio
+        X.push(f(row.radio));
+        y.push(f(row.sales));
     })
 }    
 
@@ -54,5 +54,4 @@ function predictOutput() {
         predictOutput();
     });
 }
-
 
